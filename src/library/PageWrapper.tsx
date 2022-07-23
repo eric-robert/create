@@ -17,7 +17,7 @@ export default function ( props : Props ) {
     const navigate = useNavigate();
     const location = useLocation();
 
-    const titleActive = location.pathname == '/'
+    const titleActive = location.pathname == '/create'
     const titleColor = titleActive ? 'accent' : undefined
 
     const icons = props.icons.map((icon : NavIcon) => {
@@ -31,7 +31,7 @@ export default function ( props : Props ) {
     });
 
 
-    return <Box fill>
+    return <Box fill margin={{top: 'small'}}>
         <>
             <Box
                 tag='header'
@@ -47,7 +47,7 @@ export default function ( props : Props ) {
                     level='3' 
                     margin='small' 
                     style={{ cursor: 'pointer' }} 
-                    onClick={() => {navigate('/')}}>
+                    onClick={() => {navigate('/create')}}>
                     {props.title}
                 </Heading>
                 <div>

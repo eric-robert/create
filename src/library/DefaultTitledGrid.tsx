@@ -8,7 +8,7 @@ const columns = {
 };
 
 const rows = {
-    small: ['xxsmall', 'auto'],
+    small: ['xsmall', 'auto'],
     medium: ['xsmall', 'auto'],
     large: ['xsmall', 'auto'],
 };

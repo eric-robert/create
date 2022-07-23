@@ -12,7 +12,7 @@ export default function () {
     const icons = [
         {
             icon: Key,
-            path: "/password"
+            path: "/create/password"
         }
     ]
 
@@ -23,9 +23,9 @@ export default function () {
 
     return <Grommet theme={theme} full>
         <Routes>
-            <Route path="" element={pageWrapper}>
-                <Route path="/" element={<Home/>} />
-                <Route path="/password" element={<Password />} />
+            <Route path="/create" element={pageWrapper}>
+                <Route path="/create/" element={<Home/>} />
+                <Route path="/create/password" element={<Password />} />
             </Route>
         </Routes>
     </Grommet>

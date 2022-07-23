@@ -259,7 +259,7 @@ export default function () {
         </DefaultTitledGrid>
         <Box
             onClick={() => {
-                window.open('https://github.com/eric-robert/create-for-me/tree/main/src/utils');
+                window.open('https://github.com/eric-robert/create/tree/main/src/utils');
             }}
             style={{position: 'absolute', right: 0, bottom: 0}}
             flex direction="row"

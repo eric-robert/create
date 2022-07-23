@@ -1,3 +1,7 @@
+import DefaultTitledGrid from "../library/DefaultTitledGrid";
+
 export default function () {
-    return <div> Home </div>
+    return <DefaultTitledGrid title={"Work In Progress Site"}>
+        Aiming to be a simple site that is used to generate passwords, wip
+    </DefaultTitledGrid>
 }

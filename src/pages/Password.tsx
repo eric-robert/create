@@ -1,10 +1,10 @@
-import { Button, Box, Text, CheckBox, TextInput, RangeInput, Tab, Tabs, RadioButtonGroup, Notification} from "grommet";
+import { Button, Box, Text, CheckBox, TextInput, RangeInput, Tab, Tabs, RadioButtonGroup, Notification, Footer} from "grommet";
 import { useState } from "react";
 import DefaultTitledGrid from "../library/DefaultTitledGrid";
 import { CreateRandomPassword } from "../utils/PasswordRandomPass";
 import { CreateDictPassword } from "../utils/PasswordDictPass";
 import { CSSProperties } from "react";
-import { Book, FingerPrint } from "grommet-icons";
+import { Book, FingerPrint, Github } from "grommet-icons";
 
 const PasswordDisplay = (props : { password : string, coppied : any }) => {
 
@@ -220,41 +220,57 @@ export default function () {
         </Box>
     )
 
-    return <DefaultTitledGrid title={"Password Generator"}>
+    return <div>
+        <DefaultTitledGrid title={"Password Generator"}>
 
-        { tab == 0 
-            ? <PasswordDisplay password={randomPass} coppied={() => {setShowCopy(true)}} />
-            : <PasswordDisplay password={dictPass} coppied={() => {setShowCopy(true)}} />
-        }
-        
-        <Tabs style={{minHeight: 'auto'}} onActive={setTab}>
-            <Tab title="Purely Random" icon={<FingerPrint />}>
-                { RandomLength }
-                <Gap/>
-                { RandomCharacterSet }
-                <Gap/>
-                { RandomPrefix }
-            </Tab>
-            <Tab title="Dictionary" icon={<Book />}>
-                { DictionaryLength}
-                <Gap/>
-                { DictionarySpecial}
-                <Gap/>
-                { DictionaryJoin }
-            </Tab>
-        </Tabs>
-        
-        <Box margin={{vertical: 'medium'}} fill height={'large'}>
-            <Button primary label="Generate Again" onClick={() => setId(id + 1)}/>
-        </Box>
+            { tab == 0 
+                ? <PasswordDisplay password={randomPass} coppied={() => {setShowCopy(true)}} />
+                : <PasswordDisplay password={dictPass} coppied={() => {setShowCopy(true)}} />
+            }
+            
+            <Tabs style={{minHeight: 'auto'}} onActive={setTab}>
+                <Tab title="Purely Random" icon={<FingerPrint />}>
+                    { RandomLength }
+                    <Gap/>
+                    { RandomCharacterSet }
+                    <Gap/>
+                    { RandomPrefix }
+                </Tab>
+                <Tab title="Dictionary" icon={<Book />}>
+                    { DictionaryLength}
+                    <Gap/>
+                    { DictionarySpecial}
+                    <Gap/>
+                    { DictionaryJoin }
+                </Tab>
+            </Tabs>
+            
+            <Box margin={{vertical: 'medium'}} fill height={'large'}>
+                <Button primary label="Generate Again" onClick={() => setId(id + 1)}/>
+            </Box>
 
-        { showCopy && <Notification
-            status="info"
-            toast
-            title="Coppied to clipboard"
-            onClose={() => setShowCopy(false)}
-        /> }
+            { showCopy && <Notification
+                status="info"
+                toast
+                title="Coppied to clipboard"
+                onClose={() => setShowCopy(false)}
+            /> }
 
-    </DefaultTitledGrid>
+        </DefaultTitledGrid>
+        <Box
+            onClick={() => {
+                window.open('https://github.com/eric-robert/create-for-me/tree/main/src/utils');
+            }}
+            style={{position: 'absolute', right: 0, bottom: 0}}
+            flex direction="row"
+            margin={'xxsmall'}>
+                <Text size="small" margin={'xsmall'} style={{lineHeight: '20px'}}>
+                    View Source
+                </Text>
+                <Box margin={'xsmall'}>
+                    <Github />
+                </Box>
+            </Box>
+    </div>
 }
 

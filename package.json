@@ -1,6 +1,7 @@
 {
   "name": "ts-react",
   "description": "Boilerplate for TS-React",
+  "homepage": "https://eric-robert.github.io/create-for-me/",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",

@@ -71,8 +71,6 @@ export function CreateDictPassword ( options : options ) {
 
     let password = parts.join(mergeWith);
     
-    console.log(password)
-
     if ( replaceWithNumbers ){
         for ( let i = 0; i < password.length; i++ ){
             if ( getRandomInt(5) === 1 ){
